@@ -2,7 +2,7 @@ import { Navigate } from "react-router-dom";
 // import './css/customProfile.css';
 // import './js/scripts.js';
 import "./js/datatables-simple-demo.js";
-import "./css/styles.css";
+// import "./css/styles.css";
 // import { useEffect } from 'react';
 // import { Helmet } from "react-helmet";
 // import React, { useEffect, useState } from "react";
@@ -71,14 +71,14 @@ const ProfilePage = ({ user, setUser }) => {
   }
 
   return (
-    <div>
-      <div className="sb-nav-fixed profilediv">
+    <div className="hold-transition sidebar-mini layout-fixed">
+        <div className="wrapper">
         <DashboardNavbar user={user} setUser={setUser} />
-        <div id="layoutSidenav">
           <DashboardLayoutSideNav />
-          <div id="layoutSidenav_content">
-            <main>
-              <div className="container-fluid px-4">
+          {/* Content Wrapper. Contains page content */}
+          <div className="content-wrapper">
+            <section className="content">
+              <div className="container-fluid" style={{paddingTop: "5px"}}>
                 {/* profiles details */}
                 <div className="row  mt-4 profile-list-row">
                   <div className="col-xl-6 col-md-6 profile-list-div ">
@@ -237,10 +237,10 @@ const ProfilePage = ({ user, setUser }) => {
                   </div>
                 </div>
               </div>
-            </main>
+            </section>
           </div>
         </div>
-      </div>
+     
 
       <div
         className="modal fade"
